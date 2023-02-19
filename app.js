@@ -4,8 +4,10 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 const passport = require('passport');
 const cros = require('cors');
+require('.env').config();
+
 // mongo db istablish connnection
-mongoose.connect('mongodb://127.0.0.1/blogdb');
+mongoose.connect(process.env.db_connection);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'failed to make connection with mongodb'))
 

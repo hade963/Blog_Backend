@@ -9,7 +9,7 @@ const process = require('process');
 require('dotenv').config();
 
 
-mongoose.connect('mongodb://127.0.0.1/blogdb');
+mongoose.connect(process.env.db_connection);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongodb connnection erorr'));
